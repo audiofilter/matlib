@@ -1,0 +1,17 @@
+@optSequence/char.m
+@optSequence/ctranspose.m
+@optSequence/display.m
+@optSequence/fourier.m
+@optSequence/get_noff.m
+@optSequence/ldivide.m
+@optSequence/le.m
+@optSequence/minus.m
+@optSequence/mtimes.m
+@optSequence/optSequence.m
+@optSequence/optimal.m
+@optSequence/or.m
+@optSequence/plus.m
+@optSequence/rdivide.m
+@optSequence/subsref.m
+@optSequence/times.m
+@optSequence/transpose.m

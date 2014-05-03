@@ -1,0 +1,149 @@
+%% BEGIN README
+
+********************************************************************************
+**         "README" file for MIMO (Toolbox) Package, 2.2.0, 03/08/12          **
+********************************************************************************
+
+COPYRIGHT
+
+  (C)2001-2003, Kamil Anis
+
+  K337 Dept. of Radioelectronics
+  Faculty of Electrical Engineering
+  Czech Technical University in Prague
+  Technicka 2
+  166 27 - Prague 6,
+  Czech Republic
+
+  e-mail: anisk@feld.cvut.cz,
+  URL: http://radio.feld.cvut.cz/~anis
+
+  (1) MIMO Toolbox is primarily intended for academical and non-commercial
+      use. Commercial-like requests will be reviewed individually. 
+ 
+  (2) Copying of part or all of the MIMO package requires the Dept. of
+      Radioelectronics approval! Any other redistribution in electronic or
+      printed form is strictly prohibited. All the source code and
+      documentation is maintained by the author ©2002 Kamil ANIS,
+      anisk@feld.cvut.cz. All rights reserved. 
+  
+  (3) You are allowed to make a printed copy of the documentation that comes
+      with the toolbox. 
+
+  (4) If you publish anything that makes use of a design that was partly
+      obtained using the toolbox, you have to cite it. The citation could read
+      something like this: 
+
+      K. Anis, MIMO Toolkit, MATLAB toolbox for space-time codes design and
+      performance evaluation, Dept. of Radioelectronics, Czech Tech. Univ. in
+      Prague, http://radio.feld.cvut.cz/~anis/mimotools. 
+    
+  (5) If you will make some changes in the sources you have to include the
+      following lines into the header of the script: 
+     
+        % Copyright 2001-2003 Kamil Anis, anisk@feld.cvut.cz
+        % Dept. of Radioelectronics,
+        % Faculty of Electrical Engineering,
+        % Czech Technical University in Prague,
+        % $Revision: 2.1 $ $Date: 2003/1/16 17:33:28 $
+        % --
+        % (c)year Your Name 
+
+
+PACKAGE CONTENT
+
+  README.1st		(this file)
+  doc/mimodoc.pdf	(toolbox documentation in PDF format)
+  toolbox/          (toolbox sources)
+  
+  Moreover you need to have Signal Processing Toolbox right from The Mathworks
+  Inc. to run the program sucessfuly.
+
+
+TUNED UNDER
+
+  MATLAB(R) version 6.5.0.180913a (R13)
+  
+  with
+  
+  - Communications Toolbox
+  - Signal Processing Toolbox
+
+  
+INSTALLATION
+
+  (1) copy the directory with M-files to wherever you want it to have
+
+  (2) include the path to the directory in your startup.m file
+
+        addpath /home/user/matlab/toolbox
+
+      On UNIX platforms this file should be located in $HOME/matlab/
+      directory.
+      
+
+PROGRAMING CONVENTIONS
+
+  If you will modify the sources or you will create a new scripts based on
+  those from MIMO toolbox please do that with respect to the following
+  conventions:
+
+  (1) set the value for smart indenting to 2 as shown below
+
+      for i = 1:10
+        disp(i);
+      end
+
+  (2) write the expressions in the way shown below
+
+      y = k * x + q             (OK)
+      y=k*x+q		            (WRONG)
+      k = 1:10                  (OK)
+      c = -1                    (OK)
+      x = [1,2,5:10,12];        (OK)
+      y = function(x1,x2)       (OK)
+
+  (3) set the variables in lower case letter; the name should be
+      selfexplanatory and should have consistent labeling
+
+      i
+      shortvar
+      long_variable
+
+      symb_time = 0.0001;
+      symb_samples = 4;
+      symb_energy = 1;
+
+      if you decide to use global variables don't forget to make default
+      settings; the global settings should be overrided by the local settings;
+      checking process should work as follows:
+      
+      (1) check whether local setting exists
+      (2) if not, use global setting
+      (3) if there no local neither global setting use defaults
+      
+      this allows the modules to be controlled globally but live
+      independently; please set the global variables in upper case letters
+
+      SYNC
+      SYNC_TIMING
+
+  (4) properties should be written in in full form with leading upper case
+      letter; if the property value is a string it should be set in lowwer
+      case letters e.g.
+
+      sig_ch = channel(sig_in,'Fading','none')
+
+  (5) determine the program body in such a way  
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+      program body...
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BODY END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% END README

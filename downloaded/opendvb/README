@@ -1,0 +1,18 @@
+Open-DVB
+========
+
+Open-DVB is an open implementation of digital video broadcasting (DVB).
+The development takes place at Vodafone Chair for Mobile Communications 
+Systems at Technische Universität Dresden. 
+It is distributed under the BSD license (see LICENSE).
+
+The purpose of this application is to serve as a benchmark for the MOUSE 
+compiler system.
+
+Currently, the signal processing portion of terrestrial transmission (DVB-T) 
+according to ETSI standard EN 300 744 V1.4.1 is implemented. The system is 
+able to send and receive with 2k carriers in 16-QAM mode. It runs under 
+Matlab, Octave, and our Octave-Frontend.
+
+For more information, please look at:
+http://www.radionetworkprocessor.com/opendvb.html

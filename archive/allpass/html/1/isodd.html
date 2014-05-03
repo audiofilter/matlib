@@ -1,0 +1,44 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>isodd</H1>
+<H2>(./isodd.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>odd = isodd(x)</pre>
+<HR><H3>Help text</H3>
+<pre>
+ function odd = isodd(x)
+ 
+ function yields a matrix odd which is 1 for every odd
+ value of abs(x) and 0 else.
+ 
+ ml, 20.8.1992
+
+ Copyright Lehrstuhl fuer Nachrichtentechnik Erlangen, FRG
+ e-mail: int@nt.e-technik.uni-erlangen.de
+</pre>
+<HR><H3>Listing of function </H3>
+<pre>
+function odd = isodd(x)
+
+% function odd = isodd(x)
+% 
+% function yields a matrix odd which is 1 for every odd
+% value of abs(x) and 0 else.
+% 
+% ml, 20.8.1992
+%
+% Copyright Lehrstuhl fuer Nachrichtentechnik Erlangen, FRG
+% e-mail: int@nt.e-technik.uni-erlangen.de
+
+[m,n] = size(x);
+odd = zeros(m,n);
+ind = find((x-1)/2==fix((x-1)/2));
+odd(ind) = 1 + odd(ind);
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Sep  2 12:01:37 US/Pacific 1997
+<BR>
+Cross-Directory links are: ON<BR>
+</BODY>

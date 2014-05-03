@@ -1,0 +1,35 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>crsrmake</H1>
+<H2>(./crsrmake.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>crsrmake(ax,name,dir,posit,ltype)</pre>
+<HR><H3>Help text</H3>
+<pre>
+CRSRMAKE Create axes crsr.
+       H=CRSRMAKE(AXES,'NAME','DIRECTION',POSITION,'LINETYPE')
+       creates a cursor on the axes pointed to by the handle
+       axes. If not handle is provided, the current axes is
+       used. 'NAME' is a unique identifier for the cursor and
+       is used to reference the cursor during subsequent cursor
+       operations. 'direction' can be either 'horizontal' or
+       'vertical'. POSITION is a scalar number of where the
+       cursor is to be located (x-axis location for 'vertical'
+       cursors, y-axis location for 'horizontal' cursors).
+       'LINETYPE' is any valid MATLAB linetype. An error occurs
+       if a cursor is created beyond the limits of the axes.
+
+       See also <A HREF = "../1../crsrmove.html">CRSRMOVE</A>, <A HREF = "../1../crsrdel.html">CRSRDEL</A>, <A HREF = "../1../crsron.html">CRSRON</A>, <A HREF = "../1../crsroff.html">CRSROFF</A>
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function is called by
+<pre><UL>
+<LI><A HREF = "../1../linetest.html">linetest</A>       ./linetest.m</LI>
+<LI><A HREF = "../1../zoomtool.html">zoomtool</A>       ./zoomtool.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Mon Aug 18 10:31:12 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

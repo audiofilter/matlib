@@ -1,0 +1,33 @@
+function y = src_off(beta,isps,npts,off)
+% function y = src_off(beta,isps,npts,off)
+%$Id: src_off.m,v 1.2 1997/10/13 16:12:05 kirke Exp $
+% Square root raisine cosine impulse response for a given alpha,
+% samples/symbol and number of points.
+% off is the offset in samples (enter fraction for fractional offset)
+y = zeros(1,npts);
+for t=1:npts
+	i = t - (npts+1)/2+off;
+	i2 = i*i/(isps*isps);
+	x1 = pi*i/isps;
+	x2 = 4*beta*i/isps;
+	x3 = x2*x2 - 1;
+	if (x3==0)
+		x3 = (1-beta)*pi*i/isps;
+		x2 = (1+beta)*pi*i/isps;
+		nom  = sin(x2)*(1+beta)*pi - cos(x3)*((1-beta)*pi*isps)/(4*beta*i) + sin(x3)/(4*beta*i2);
+		denom = -32*pi*beta*beta*i/isps;
+		if (beta==1) 
+			nom = 1;
+			denom = 4*beta;
+		end
+	else 
+		if (x1==0)
+			nom = cos((1+beta)*x1) + (1-beta)*pi/(4*beta);
+		else 
+			nom = cos((1+beta)*x1) +  sin((1-beta)*x1)/(4*beta*i/isps);
+		end
+		denom = x3*pi;
+	end
+	y(t) = -4*beta*nom/denom;
+end
+

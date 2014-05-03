@@ -1,0 +1,64 @@
+sequence minus needs an automatic cast (possibly with a warning)
+
+in minimize, could pre-process constraints to determine required data
+matrices in advance, rather than appending.  Should speed up with many
+constraints (although good Opt coding shouldn't require this).
+
+sedumi chokes when # of dual variables exceeds the # of dual constraints -
+is this a bug?  It coresponds to a overdetermined primal problem with
+no solution and a dual problem with a solution of 0.
+Should check for this nonsense case in Opt.
+
+fix mtimes bug in optQuadVector - only allow pos. scaling?
+probably need to check optQuad also
+
+> for linear constraints
+
+*equality constraints
+
+*define linear constraints as g{<,==}0, where a is an optVector
+so that constraints can be defined before all variables are declared
+also requires just one object per constraint
+move A & b extraction from constructor to minimize
+
+*define SOC constraints as \|g\|{<,==}h, 
+where g & h are optVectors, and length(h)==1
+same benefits as above
+
+check all functions that create new types or return classes for
+proper propagation of pool info.  i.e. minus() seems broken if
+the first term is a constant.
+
+properly overload optVector and then cast all optVector inputs to 
+gracefully handle constant vectors.
+
+more fully profile convolution and pwr() functions
+
+fix fftfilt so convolution can use it
+
+*?find bug that occurs when aux vars are used. current workaround is to
+change order of variable declaration.
+
+find case dependancies and automate generation of all-lowercase version
+
+check all implicit uses of optVector functions on optSequences, make
+sure the type is preserved and we get what we really want.
+Including optQuadVector, adding them does return the right thing.
+
+When x is a length-1 optVector, x.^2 (or maybe x^2?) should return a
+quadratic, not an optQuadVector?
+
+check for uses of insertion/extraction functions when direct manipulation
+is allowed (i.e. we are in a class function of the object)
+
+make sure full complement of operations (+-/*) is available
+
+resolve pwr/power conflict.  power is overloaded ^ function, but is
+being used by a lot of programs now.  pwr has no (known) conflicts.
+
+create another level of reporting below warning ('info'?)
+
+add xcorr-like functionality to only computer N lags of corr/conv
+
+display functions
+

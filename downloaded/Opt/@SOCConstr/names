@@ -1,0 +1,6 @@
+@SOCConstr/SOCConstr.m
+@SOCConstr/get_A.m
+@SOCConstr/get_Mrank.m
+@SOCConstr/get_b.m
+@SOCConstr/get_c.m
+@SOCConstr/get_d.m

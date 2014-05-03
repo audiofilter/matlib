@@ -1,0 +1,49 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>v3dtool</H1>
+<H2>(./v3dtool.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>v3dtool(gf)</pre>
+<HR><H3>Help text</H3>
+<pre>
+V3DTOOL View three-dimensional plots tool.
+       V3DTOOL(H) attaches itself to the 3D axis in the figure
+       window specified by the handle H. If H is omitted, the
+       current figure is used.
+
+       V3DTOOL takes the drudgery out of typing the view command
+       over and over to find the best orientation for a three
+       dimensional plot. It can be used in figure windows which
+       have a single 3D axes. Upon its use, V3DTOOL repositions
+       the axes, leaving room for the following controls:
+
+           o A scroll bar controlling the azimuth.
+           o A scroll bar controlling the elevation.
+           o &quot;Azimuth&quot; and &quot;Elevate&quot; edit boxes to display
+             the current values of the associated scroll bars
+             or allow the desire azimuth or elevation to be
+             entered directly.
+           o A &quot;Q&quot;uit push button which removes the uicontrols
+             and restores the original position leaving the
+             final axes orientation.
+
+       Notes: Only one V3DTOOL per figure window is allowed.
+              Only one axis can be present in the figure window.
+
+       See also <A HREF = "../1../zoomtool.html">ZOOMTOOL</A>
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function calls
+<pre><UL>
+<LI><A HREF = "../1../cntaxes.html">cntaxes</A>        ./cntaxes.m</LI>
+<LI><A HREF = "../1../findedit.html">findedit</A>       ./findedit.m</LI>
+<LI><A HREF = "../1../findpush.html">findpush</A>       ./findpush.m</LI>
+<LI><A HREF = "../1../findslid.html">findslid</A>       ./findslid.m</LI>
+<LI><A HREF = "../1../finduitx.html">finduitx</A>       ./finduitx.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Mon Aug 18 10:31:12 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

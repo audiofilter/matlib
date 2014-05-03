@@ -1,0 +1,31 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>iniheq2</H1>
+<H2>(./iniheq2.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>[IP,wprot] = iniheq2(L,wp);
+</pre>
+<HR><H3>Help text</H3>
+<pre>
+ INIHEQ2
+ MATLAB m-file for fractional delay approximation
+ Initialisation for equiripple design:
+ Design an odd-length halfband filter for the prototype
+ (find zeros and scale them by multiplying by 2).
+ Format: [IP,wprot] = iniheq2(L,wp);
+ Input: L = filter length (filter order N = L-1)
+        wp = passband edge of approximation (0 &lt; wp &lt; 1)
+ Output: IP = inverse P matrix
+         wprot = zeros of the linear phase prototype filter 
+ Subroutines: standard MATLAB functions
+
+ First version: 28.12.1992 / Timo Laakso
+ This version:  14.01.1996 / Timo Laakso
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Aug 12 13:10:21 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

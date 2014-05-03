@@ -1,0 +1,36 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>cntuictl</H1>
+<H2>(./cntuictl.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>[n,y] = cntuictl(fig,style)</pre>
+<HR><H3>Help text</H3>
+<pre>
+CNTUICTL Count figure uicontrols objects.
+       [N] = CNTUICTL(H,'OBJECT') counts the number of
+       UICONTROLs of 'STYLE' in the figure window specified
+       with the handle H.  Valid values for 'STYLE' are
+       the same as those for the Style property of UICONTROLs.
+       Partial values for 'STYLE' are recognized (i.e. 'pop'
+       for 'popupmenu').  Current valid styles are:
+
+               pushbutton | radiobutton | checkbox | slider |
+               edit | popupmenu | text | frame
+
+       [N] = CNTUICTL('STYLE') counts the number of UICONTROLs
+       of 'STYLE' in the current figure window.
+
+       [N] = CNTUICTL(H) counts the total number of UICONTROLS
+       in the figure window specified with the handle H.
+
+       [N,Y] = CNTUICTL(H,'STYLE'), [N,Y] = CNTUICTL('STYLE')
+       and [Y,Y] = CNTUICTL return a vector containing the
+       handles to the counted objects in Y.
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Mon Aug 18 10:31:12 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

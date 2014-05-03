@@ -1,0 +1,51 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>fir_fbe</H1>
+<H2>(./fir_fbe.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>w = fir_fbe(a,wi,Abe);</pre>
+<HR><H3>Help text</H3>
+<pre>
+
+ find band edges of an FIR filter using Newton's method
+ using initial estimates
+
+ A   : a(1)+a(2)*cos(w)+...+a(n+1)*cos(n*w)
+ wi  : initial values for the band edges
+ Abe : value of H at the band edges
+
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function is called by
+<pre><UL>
+<LI><A HREF = "../1../cl2lpr.html">cl2lpr</A>         ./cl2lpr.m</LI>
+</UL></pre>
+<HR><H3>Listing of function </H3>
+<pre>
+function w = fir_fbe(a,wi,Abe);
+%
+% find band edges of an FIR filter using Newton's method
+% using initial estimates
+%
+% A   : a(1)+a(2)*cos(w)+...+a(n+1)*cos(n*w)
+% wi  : initial values for the band edges
+% Abe : value of H at the band edges
+%
+a = a(:);
+m = length(a)-1;
+w = wi(:);
+Abe = Abe(:);
+for k = 1:20
+   A = cos(w*[0:m]) * a - Abe;
+   A1 = -sin(w*[0:m]) * ([0:m]'.*a);
+   w = w - A./A1;
+end
+
+
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Sep  2 12:01:37 US/Pacific 1997
+<BR>
+Cross-Directory links are: ON<BR>
+</BODY>

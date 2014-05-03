@@ -1,0 +1,10 @@
+Viterbi Implementation
+======================
+
+The code contained in this directory contains the implementation of the
+Viterbi algorithm as distributed with the book:
+Matlab in der Nachrichtentechnik, J. Schlembach-Verlag, Weil der Stadt, Germany, 2001
+by Kammeyer and Kühn.
+
+Thanks to Prof. Kammeyer and Dr. Kühn for allowing the distribution of
+their code along with Open-DVB.

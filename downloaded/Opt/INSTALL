@@ -1,0 +1,47 @@
+*Note* This software is still somewhere between alpha and beta testing
+- it works and we use it constantly, but it has a lot of quirks,
+"features", and missing bits.  At lest there is some documentation
+now...
+
+Installation instructions for the FIR filter optimization package:
+
+1) Get one of the distribution files, either Opt-X.Y.tar.gz or Opt-X.Y.zip,
+   from http://www.csee.umbc.edu/~dschol2/opt.html and unpack it into any
+   convenient directory.  The directory Opt should be created which is
+   the top of the source tree.  If unpacking Opt.zip under Windows it
+   is important that the directory structure be preserved.
+
+2) Add the Opt directory to your Matlab path.  You must have Matlab
+   5.0 or higher, due to the heavy use of the class structure.
+
+3) Install any optimization engine packages that will be used.
+   Currently supported: SeDuMi, LOQO, MOSEK, SDPpack, SDPT3 and SOCP.  
+   The web page has the links.  Follow the directions for each package.  
+   Make sure the main solver routines are on your Matlab path.
+
+4) Compile mex files. Currently there are: 
+   - wherein.c in the top-level directory
+   - pwrengine.c in @CTProcess/private
+   - pwrengine.c in @NDProcess/private
+   - ImpulseTime.c in @NDProcess/private
+   - fourierEngine.c in @optArray/private
+   If you are using Linux, we've provided a Makefile to automate this 
+   process. Simply type "make" from the top-level directory.
+
+That's pretty much it for installation.  Probably the hardest part,
+especially on a Windows PC, is compiling the mex files for the
+engines.  To test the implementation, go to the examples directory and
+try running the matlab scripts found there.
+
+test.m, test2.m: compare the same design using eigenfilter routines and
+		  the loqo QP interface
+testloqo.m	: tests out the loqo QP interface
+testsocp.m,testgrid.m : tests all engines for LS and Linf designs
+
+It is very possible that somewhere in all this I use some routines
+that are not a standard part of Matlab, either from a toolbox or my
+own routines.  Please let me know if you find one so I can fix it.
+
+Dan Scholnik
+scholnik@nrl.navy.mil
+3/08/2004

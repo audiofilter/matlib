@@ -1,0 +1,15 @@
+*Initial Entry: 3/13/2000*
+Made changes to accomodate the case bug in the PC/Windoze version -
+While in UNIX class names are completely case sensitive and are based
+on the @ClassName directory, in the Windoze version they are case
+insensitive when created and compared with isa(), but are internally 
+always stored as lowercase.  So if the class directory (and intended
+class name) is @ClassName, then the internal class name (as returned by
+class()) will be classname, and classes that inherit ClassName will
+have a field classname.  So we always have to lowercase references
+to class names and child fields in Windoze.  In UNIX things work
+as they should.  Code changes made:
+  added OP_DATA.casebug field, ==1 for computer='PCWIN'
+  whenever inherited fields (i.e. seq.optVector) are named directly,
+    we need an if-then-else block to selectively lowercase the field
+  changed "switch class(foo)" to "switch lower(class(foo))"

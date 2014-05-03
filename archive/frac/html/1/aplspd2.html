@@ -1,0 +1,34 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>aplspd2</H1>
+<H2>(./aplspd2.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>ap = aplspd2(Nap,x,wp)
+</pre>
+<HR><H3>Help text</H3>
+<pre>
+ APLSPD2
+ MATLAB m-file for ALLPASS fractional delay filter design
+ using one-shot LS PHASE DELAY approximation
+ Format: ap = aplspd2(Nap,x,wp)
+ Input: Nap = filter order N
+        x = fractional delay (0 &lt; x &lt;= 1)
+        wp = passband edge of approximation (0 &lt; wp &lt; 1)
+ Output: Filter coefficient vector ap=ap(1)...ap(N+1)
+         (Note that ap(1)=1 always)
+ Subroutines: standard MATLAB &amp; SP Toolbox functions &amp;
+              <A HREF = "../1../numint2.html">numint2</A>.m, <A HREF = "../1../eigsolv2.html">eigsolv2</A>.m
+ Timo Laakso   27.02.1993
+ Last revision 15.01.1996
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function is called by
+<pre><UL>
+<LI><A HREF = "../1../apfar2.html">apfar2</A>         ./apfar2.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Aug 12 13:10:21 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

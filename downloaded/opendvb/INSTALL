@@ -1,0 +1,35 @@
+Open-DVB Installation
+=====================
+
+1. Unpack the code
+------------------
+
+Unpack the code. The distribution contains the subdirectories named 'dvbt', 
+'kammeyer', 'common', 'octave', 'matlab', and 'ref'. The sample transport 
+streams create additional subdirectories in 'ref'.
+
+2. Execution on Matlab
+----------------------
+
+For execution on Matlab, place 'dvbt', 'kammeyer', 'common', and 'matlab'
+on your search path. You may use the file 'startup.m' as a template.
+
+3. Execution on Octave
+----------------------
+
+For execution on Octave or the Octave-Frontend, place 'dvbt', 'kammeyer', 
+'common', 'octave' on your search path. Edit the file '.octaverc'.
+
+4. Locations of Reference- and Dump-Files
+-----------------------------------------
+
+Edit the file 'dvbt/dump_open.m'. Set 'ref_dir' is the location where 
+testbenches look for reference data. It should point to the 'ref' directory 
+included in the distribution.
+'test_dir' is the place where many dump files will be created during the
+run of the testbenches.
+
+-------------------------------------
+
+For more information, please look at:
+http://www.radionetworkprocessor.com/opendvb.html

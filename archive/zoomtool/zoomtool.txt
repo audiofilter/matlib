@@ -1,0 +1,132 @@
+zoomtool
+---------------------------------------------------------------------
+Purpose
+    2D plot zoom/measurement tool.
+
+Synopsis
+    zoomtool(h)
+
+Description
+    zoomtool(h) re-displays axes pointed to by the axes handle, h, with
+
+        o Two horizontal and vertical cursor pairs.
+        o A buttonbar with cursor control icons above the top axes.
+        o A buttonbar with zoom control icons down the right axes.
+        o Cursor location readouts along the bottom axes with addi-
+          tional readouts for the difference (delta) between the 
+          cursors.
+        o A toggle button.
+        o A quit button.
+
+    These controls allow the user to
+
+        o Measure a particular point on a curve.
+        o Measure the X and Y difference between two points on a
+          curve.
+        o Independently zoom in on the curve between the vertical
+        cursors.
+
+    The cursor push button controls (one set for each cursor) allow 
+    movement of the vertical cursor along the horizontal axis. The 
+    horizontal cursor is automatically adjusted to the magnitude of 
+    the corresponding sample at the vertical cursor location. The 
+    push button controls are:
+
+        o "<" and ">" move the vertical cursor to the next left or 
+        right sample.
+
+        o "<<" and ">>" move the vertical cursor to the next left or 
+        right peak.
+
+    Note:	A peak is defined a the next maxima or minima in the 
+    curve formed by the vector values.
+
+    In addition to cursor manipulation with push buttons, the 
+    cursors can also be manipulated with the mouse. A single click 
+    on a curve will move the nearest cursor (horizontal distance) 
+    to that point. The mouse button can also be held down and the 
+    nearest cursor "dragged" to the desired location.
+    
+    The zoom push button controls (one set for the X-axis, Y-axis, 
+    and both X- and Y-axis) are:
+    
+        o "> <" zooms in on the X-axis between the cursors. Zooms to 
+          maximize the view of the Y-axis.
+        o "< >" zooms out to the previous zoom limits.
+        o "[ ]" zooms out to the full axis limits.
+
+    The X-Axis readouts are edit boxes. Using these edit boxes, a 
+    desired location for the vertical cursors can be entered. 
+    After pressing return, the cursor will be moved to the new 
+    location. The "Delta X" readout is also an edit box. It can be 
+    used to enter an offset from cursor 1 to place cursor 2. Enter- 
+    ing a location such that a cursor would be located beyond the 
+    limits of the axes will move the cursor to the axes limit.
+    
+    The toggle push button ("T") toggles the attachment of the 
+    cursor to next curve when an axes contains more than one curve. 
+    Toggling to a specific curve can be accomplished with the mouse 
+    by simply selecting the desire line.
+    
+    If the handle, h, is omitted, the current axis is used.
+    
+    Quitting zoomtool with the quit push button ("Q") leaves the 
+    axes in the last zoomed state, removing the button bars and 
+    readouts. after which the user can print or otherwise treat the 
+    axes as any other axes.
+    
+    Note:	Only one zoomtool can be active in a single figure 
+    window at a time. Multiple zoomtools can be active as long as 
+    they are attached to axes in different figure windows. While 
+    active, zoomtool will cover the X-axis label and may also 
+    cover the axes title.
+    
+Examples
+
+Use zoomtool as an oscilloscope to measure the period of a 100 
+Hz sinusoid.
+
+    fs = 1000;	% sampling frequency
+    ind = 0:1/fs:0.1;	% time index
+    y = sin(2 * pi * 100 .* ind);	% generate sinusoid
+    plot(ind,y);	% plot sine wave
+    zoomtool(gca);	% start zoomtool
+
+    o Use the cursor controls to move the cursor to the maxima of 
+    two successive waveforms and read the period from the Delta X 
+    readout.
+
+Use zoomtool to measure the null-to-null bandwidth of a band 
+pass filter.
+
+    [b,a] = cheby2(10,5,[.4 .5]);	% design filter
+    [h,w] = freqz(b,a,512);	% compute transfer function
+    mag = 20*log10(abs(h));	% compute magnitude
+    w = w/pi;	% convert to scale digital frequencies
+    plot(w,mag);	% plot transfer function
+    zoomtool(gca)	% start zoomtool
+
+    o Use the cursor controls to move the cursors to either side of 
+    the passband and read the bandwidth from the Delta X readout.
+
+Use zoomtool to find the index of the impulse function 
+resulting from the correlation of gaussian white noise.
+
+    s = randn(256,1) * 2;	% a "noise" signal
+    t1 = randn(1024,1);	% a noise source
+    t2 = randn(1024,1);	% a second noise source
+    t1(1:256) = t1(1:256) + s;		% add signal to first noise
+    t2(201:200+256) = t2(201:200+256) + s;	% offset signal into second noise
+    t1t2xx = xcorr(t1,t2);		% compute cross-correlation
+    plot(t1t2xx)	% plot the cross-correlation
+    zoomtool	% start zoomtool
+
+    o Use the edit box to position cursor 1 at sample 1024 
+    (identically zero in the cross-correlation). Grab cursor 2 and 
+    drag it into close proximity to the impulse. Use the cursor 2 
+    peak ("<<" or ">>") to place the cursor exactly on the impulse. 
+    The index of the impulse can be read from the cursor 2 X-axis 
+    readout. Note the Delta X readout displays the offset of the 
+    "signal."
+
+

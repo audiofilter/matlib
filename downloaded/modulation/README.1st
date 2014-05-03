@@ -1,0 +1,62 @@
+-------------------------------------------------------
+COMMUNICATIONS TOOLBOX
+
+Original matlab code by:
+
+Dr. Mehmet Zeytinoglu
+        Department of Electrical & Computer Engineering
+        Ryerson Polytechnic University
+        350 Victoria Street
+        Toronto, Ontario M5B 2K3
+        CANADA
+
+        Phone:  (416) 979-5000 ext 6078
+        Fax  :  (416) 979-5280
+        EMail:  mzeytin@ee.ryerson.ca
+
+ftp://unix.hensa.ac.uk/mirrors/matlab/contrib/v4/misc/comm_tbx/
+
+--------------------------------------------------------
+I modified the original code in order to it can be executed with octave
+Octave is similar to matlab but free. It can be download at
+
+   http://www.octave.org
+
+This code must be executed with octave and the command line 
+must be:
+
+> octave --traditional
+
+The demo program is cdemo.m
+
+--------------------------------------------------------
+The following functions have been taken from
+
+http://users.powernet.co.uk/kienzle/octave/matcompat/index.html
+
+ * bilinear.m   
+ * butter.m   
+ * buttord.m 
+ * cheby1.m
+ * cheby2.m 
+ * isreal.m 
+ * sftrans.m  
+ * tf2zp.m    
+ * unwrap.m  
+ * xcorr.m 
+ * xcorr2.m     
+ * xcov.m     
+ * zp2tf.m
+
+--------------------------------------------------------
+Added functions:  
+
+ * hpf.m  
+ * pam.m  
+ * cdemo.m
+ * pha_diag.m  
+ * qam_mod.m 
+ * qam_dem.m
+ 
+--------------------------------------------------------
+

@@ -1,0 +1,16 @@
+@optQuad/char.m
+@optQuad/display.m
+@optQuad/eq.m
+@optQuad/get_kernel.m
+@optQuad/get_xoffc.m
+@optQuad/get_xoffr.m
+@optQuad/ispure.m
+@optQuad/lt.m
+@optQuad/mrdivide.m
+@optQuad/mtimes.m
+@optQuad/optQuad.m
+@optQuad/optimal.m
+@optQuad/plus.m
+@optQuad/set_kernel.m
+@optQuad/set_xoffc.m
+@optQuad/set_xoffr.m

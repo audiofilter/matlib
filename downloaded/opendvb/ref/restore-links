@@ -1,0 +1,17 @@
+#!/bin/sh
+
+mkdir -p "5-superframes"
+
+cd "5-superframes"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/5_SuperFrames_2_Frames_RandomPattern.log" "..ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/08_Mapper/5_SuperFrames_2_Frames_RandomPattern_ma.bin" "08_Mapper.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/06_Bit_Interlever/5_SuperFrames_2_Frames_RandomPattern_bi.bin" "06_Bit_Interlever.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/test_streams/Italo-TX/5_SuperFrames_2_Frames_RandomPattern.tf" "test.ts"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/02_RS-Encoder/5_SuperFrames_2_Frames_RandomPattern_rs.bin" "02_RS-Encoder.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/04_Convolutional_Encoder/5_SuperFrames_2_Frames_RandomPattern_ve.bin" "04_Convolutional_Encoder.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/01_Energy_Dispersal,SYNC1-Inversion/5_SuperFrames_2_Frames_RandomPattern_ed.bin" "01_Energy_Dispersal,SYNC1-Inversion.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/10_IFFT/5_SuperFrames_2_Frames_RandomPattern.bin" "10_IFFT.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/09_Pre-IFFT/5_SuperFrames_2_Frames_RandomPattern_fd.bin" "09_Pre-IFFT.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/07_Symbol_Interleaver/5_SuperFrames_2_Frames_RandomPattern_si.bin" "07_Symbol_Interleaver.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/05_Puncturer/5_SuperFrames_2_Frames_RandomPattern_pu.bin" "05_Puncturer.ref"
+ln -s "/home/global/projekte/m5/appl/dvbt/impl/ref_designs/Italo-TX/ref_dumps/ref_2k/03_Convolutional_Interleaver/5_SuperFrames_2_Frames_RandomPattern_ci.bin" "03_Convolutional_Interleaver.ref"

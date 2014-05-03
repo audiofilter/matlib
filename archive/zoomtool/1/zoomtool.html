@@ -1,0 +1,98 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>zoomtool</H1>
+<H2>(./zoomtool.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>zoomtool(ga)</pre>
+<HR><H3>Help text</H3>
+<pre>
+ ZOOMTOOL Axes zoom/measurement tool.
+       ZOOMTOOL(H) activates the ZOOMTOOL on the axes
+       specified by the handle H.
+
+       ZOOMTOOL activates the ZOOMTOOL on the current axes.
+
+       Once activated, ZOOMTOOL redraws the axis with two
+       vertical/horizontal cursors and several controls.
+
+       The cursor push button controls (one set for each cursor)
+       allow movement of the vertical cursor along the hori-
+       zontal axis. The horizontal cursor is automatically
+       adjusted to the magnitude of the corresponding sample
+       at the vertical cursor location. The push button
+       controls are:
+
+           &quot;&lt;&quot; and &quot;&gt;&quot; move the vertical cursor to the next
+               left or right sample.
+
+           &quot;&lt;&lt;&quot; and &quot;&gt;&gt;&quot; move the vertical cursor to the next
+               left or right peak.
+
+       A peak is defined a the next maxima or minima in the
+       curve formed by the vector values.
+
+       In addition to cursor manipulation with push buttons,
+       the cursors can also be manipulated with the mouse. A
+       single click on a curve will move the nearest cursor
+       (horizontal distance) to that point. The mouse button
+       can also be held down and the nearest cursor &quot;dragged&quot;
+       to the desired location.
+
+       The zoom push button controls (one set for the X-axis,
+       Y-axis, and both X- and Y-axis) are:
+
+           &quot;&gt; &lt;&quot; zooms in on the X-axis between the cursors.
+               Zooms to maximize the view of the Y-axis.
+
+           &quot;&lt; &gt;&quot; zooms out to the previous zoom limits.
+
+           &quot;[ ]&quot; zooms out to the full axis limits.
+
+       The X-Axis readouts are edit boxes. Using these edit
+       boxes, a desired location for the vertical cursors can
+       be entered. After pressing return, the cursor will be
+       moved to the new location. The &quot;Delta X&quot; readout is
+       also an edit box. It can be used to enter an offset
+       from cursor 1 to place cursor 2. Entering a location
+       such that a cursor would be located beyond the limits
+       of the axes will move the cursor to the axes limit.
+
+       The toggle push button (&quot;T&quot;) toggles the attachment of
+       the cursor to next curve when an axes contains more than
+       one curve. Toggling to a specific curve can be accom-
+       plished with the mouse by simply selecting the desire
+       line.
+
+       If the handle, h, is omitted, the current axis is used.
+
+       Quitting ZOOMTOOL with the quit push button (&quot;Q&quot;) leaves
+       the axes in the last zoomed state, removing the button
+       bars and readouts. after which the user can print or
+       otherwise treat the axes as any other axes.
+
+       Note: Only one ZOOMTOOL can be active in a single
+       figure window at a time. Multiple ZOOMTOOLs can be active
+       as long as they are attached to axes in different figure
+       windows. While active, ZOOMTOOL will cover the X-axis
+       label and may also cover the axes title.
+
+       See also <A HREF = "../1../zoomclr.html">ZOOMCLR</A> <A HREF = "../1../zoomdown.html">ZOOMDOWN</A> <A HREF = "../1../zoomleft.html">ZOOMLEFT</A> ZOOMMENU <A HREF = "../1../zoommove.html">ZOOMMOVE</A>
+           <A HREF = "../1../zoompklf.html">ZOOMPKLF</A> <A HREF = "../1../zoompkrt.html">ZOOMPKRT</A> <A HREF = "../1../zoomrght.html">ZOOMRGHT</A> <A HREF = "../1../zoomset.html">ZOOMSET</A> <A HREF = "../1../zoomtggl.html">ZOOMTGGL</A> ZOOMTOOL
+           <A HREF = "../1../zoomup.html">ZOOMUP</A> <A HREF = "../1../zoomxful.html">ZOOMXFUL</A> <A HREF = "../1../zoomxin.html">ZOOMXIN</A> <A HREF = "../1../zoomxout.html">ZOOMXOUT</A> <A HREF = "../1../zoomyful.html">ZOOMYFUL</A> <A HREF = "../1../zoomyin.html">ZOOMYIN</A>
+           <A HREF = "../1../zoomyout.html">ZOOMYOUT</A>
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function calls
+<pre><UL>
+<LI><A HREF = "../1../cntlines.html">cntlines</A>       ./cntlines.m</LI>
+<LI><A HREF = "../1../crsrloc.html">crsrloc</A>        ./crsrloc.m</LI>
+<LI><A HREF = "../1../crsrmake.html">crsrmake</A>       ./crsrmake.m</LI>
+<LI><A HREF = "../1../findline.html">findline</A>       ./findline.m</LI>
+<LI><A HREF = "../1../findpush.html">findpush</A>       ./findpush.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Mon Aug 18 10:31:12 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

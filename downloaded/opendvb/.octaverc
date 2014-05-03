@@ -1,0 +1,5 @@
+# please replace [path] with the path to your files,
+# e.g., /home/mueller/downloads
+
+LOADPATH="/home/tkirke/opendvb//:/home/tkirke/opendvb/dvbt:/home/tkirke/opendvb/kammeyer/:/home/tkirke/opendvb/common:/home/tkirke/opendvb/octave:"
+

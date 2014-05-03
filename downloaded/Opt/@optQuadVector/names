@@ -1,0 +1,10 @@
+@optQuadVector/char.m
+@optQuadVector/display.m
+@optQuadVector/get_absflag.m
+@optQuadVector/get_sqflag.m
+@optQuadVector/lt.m
+@optQuadVector/optQuadVector.m
+@optQuadVector/power.m
+@optQuadVector/set_absflag.m
+@optQuadVector/set_sqflag.m
+@optQuadVector/sum.m

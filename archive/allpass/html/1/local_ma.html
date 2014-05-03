@@ -1,0 +1,30 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>local_ma</H1>
+<H2>(./local_ma.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>x = local_max(c)</pre>
+<HR><H3>Help text</H3>
+<pre>
+ finds location of local maxima
+</pre>
+<HR><H3>Listing of function </H3>
+<pre>
+function x = local_max(c)
+% finds location of local maxima
+
+s = size(c); c = [c(:)].'; N = length(c);
+b1 = c(1:N-1)&lt;c(2:N); b2 = c(1:N-1)&gt;c(2:N);
+x = find(b1(1:N-2)&amp;b2(2:N-1))+1;
+if c(1)&gt;c(2), x = [x, 1]; end
+if c(N)&gt;c(N-1), x = [x, N]; end
+x = sort(x); if s(2) == 1, x = x'; end
+
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Sep  2 12:01:37 US/Pacific 1997
+<BR>
+Cross-Directory links are: ON<BR>
+</BODY>

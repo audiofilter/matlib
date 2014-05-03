@@ -1,0 +1,54 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>finduitx</H1>
+<H2>(./finduitx.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>[h] = finduitx(fig,text,value)</pre>
+<HR><H3>Help text</H3>
+<pre>
+FINDUITX Find text uicontrol.
+       [H]=FINDUITX(FIGURE,'TEXT') finds the text uicontrol
+       with 'TEXT' in the figure window specified with the
+       handle FIGURE.
+
+       The above uses the String property of the uicontrol.
+       Both 'text' and the String property must be exact matches.
+
+       [H]=FINDUITX(FIGURE,'TEXT','IDENTIFIER') 
+       finds the text uicontrol with the label 'TEXT' and with
+       the Userdata property equal to 'IDENTIFIER'.  Both
+       'IDENTIFIER' and the Userdata property must be strings.
+       This use is convenient when a figure window contains two
+       or more text uicontrols with the same labels.
+
+       [H]=FINDUITX(FIGURE,'TEXT',IDENTIFIER) and find the text
+       uicontrol with the label 'TEXT' and with the Value pro-
+       perty equal to IDENTIFIER.  Both IDENTIFIER and the Value
+       property must be numbers.  This use is convenient when a
+       figure window contains two or more text controls with the
+       same labels and the Userdata property is used for variable
+       storage.
+
+       [H] = FINDUITX(FIGURE,'','IDENTIFIER') and
+       [H] = FINDUITX(FIGURE,'',IDENTIFIER) find the text 
+       uicontrol and with the Userdata property equal to 
+       'IDENTIFIER' or Value property is equal to IDENTIFIER.  
+       This use is convenient when the text uicontrol's face 
+       value changes such as when it is used as a digital 
+       readout or a similar function.
+
+       See also <A HREF = "../1../findaxes.html">FINDAXES</A>, <A HREF = "../1../findchkb.html">FINDCHKB</A>, <A HREF = "../1../findedit.html">FINDEDIT</A>, <A HREF = "../1../findmenu.html">FINDMENU</A>, <A HREF = "../1../findpopu.html">FINDPOPU</A>,
+           <A HREF = "../1../findpush.html">FINDPUSH</A>, <A HREF = "../1../findrdio.html">FINDRDIO</A>, <A HREF = "../1../findslid.html">FINDSLID</A>
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function is called by
+<pre><UL>
+<LI><A HREF = "../1../v3dtool.html">v3dtool</A>        ./v3dtool.m</LI>
+<LI><A HREF = "../1../zoomclr.html">zoomclr</A>        ./zoomclr.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Mon Aug 18 10:31:12 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

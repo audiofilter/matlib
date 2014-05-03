@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------
+CODIFICATION FUNCTIONS
+
+I modified the original code in order to it can be executed with octave.
+Octave is similar to matlab but free. It can be download at
+ 
+   http://www.octave.org
+ 
+This version must be executed with octave and the command line 
+must be:
+ 
+> octave --traditional
+
+-----------------------------------------------------------
+SOME FUNCTIONS OBTAINED FROM:
+Original address, http://www.ee.vt.edu/valenti/home.html
+New address,      http://www.csee.wvu.edu/~mvalenti/
+
+ * bin_state , utility to convert from integer to vector of bits.
+ * bit_encode , encode a single bit.
+ * check_matrix , finds the parity check matrix from the generator matrix.
+ * cyclic_encode , encode an entire block of data.
+ * cyclic_matrix , find the generator matrix of a block code.
+ * syst_matrix , puts a generator matrix in systematic form.
+ * int_state , utility to convert from vector of bits to integer.
+ * interleave , utility that performs a block interleaving process.
+ * mult_mod2 , muliplies a vector by a matrix modulo-2.
+ * viterbi , the soft-decision Viterbi decoding algorithm.
+ * shift_reg.m , maximum sequence register generator
+
+------------------------------------------------------------
+FUNTIONS OBTAINED FROM:
+ftp://unix.hensa.ac.uk/mirrors/matlab/contrib/v4/signal/spctools/
+
+ * str2masc , string to ASCII conversion.
+ * masc2str , ASCII to string conversion.
+
+------------------------------------------------------------
+FROM rs.c (Simon Rockliff, University of Adelaide)
+(http://imailab-www.iis.u-tokyo.ac.jp/~robert/codes.html)
+
+ * rs_encode , Reed-Solomon encoder
+ * rs_decode , Reed-Solomon decoder
+
+------------------------------------------------------------
+ADDED FUNCTIONS:
+
+ * conv_encode , convolutionally encodes with k shifts per cycle
+ * crc , finds the cyclic redundant code
+ * crc_check , checks the crc
+
+------------------------------------------------------------

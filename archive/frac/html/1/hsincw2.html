@@ -1,0 +1,30 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>hsincw2</H1>
+<H2>(./hsincw2.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>h = hsincw2(L,d,wp,win)
+</pre>
+<HR><H3>Help text</H3>
+<pre>
+ HSINCW2
+ MATLAB m-file for sinc windowing method for FD filter design
+ h = hsincw2(L,d,wp,win) designs an (L-1)th-order FIR
+ filter to approximate a fractional delay of d samples,
+ where 0 &lt;= d &lt; 1, wp is the passband of approximation and
+ win is a length-L window function 
+ (e.g., win = chebwin(L,ripple), with sidelope ripple in dB).
+ Output: length-L filter coefficient vector h
+ Function Calls: standard MATLAB functions and sinc.m
+
+ Timo Laakso 23.12.1992
+ Revised by Vesa Valimaki 19.10.1995
+ Last modified 14.01.1996
+</pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Aug 12 13:10:21 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>

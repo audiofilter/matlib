@@ -1,0 +1,22 @@
+#!/bin/sh
+
+dir=5-superframes
+output=restore-links
+
+(
+    echo "#!/bin/sh"
+    echo ""
+    echo "mkdir -p \"$dir\""
+    echo ""
+    echo "cd \"$dir\""
+) > "$output"
+
+find "$dir" -type l \
+| while read file ; do
+    src=`basename $file`
+    dst=`readlink $file`
+
+    echo "ln -s \"$dst\" \"$src\"" >> "$output"
+done
+
+chmod +x "$output"

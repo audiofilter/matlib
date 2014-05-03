@@ -1,0 +1,120 @@
+clear
+t1=clock;
+
+ii=sqrt(-1);
+P=128;
+dw=pi*2/P;
+
+N=20; % order of allpass 1
+M=N; % order of allpass 2
+pee=0.3;
+pe=round(pee*P);
+se=round(0.4*P);
+tau=30;
+%K=sqrt(0.3);
+K=0.1;
+hani=[1:pe se:P/2+1];
+Ws=[K*ones(1,pe) ones(1,P/2+2-se)];
+%[B,acoe]=butter(N,pee);
+%[B,bcoe]=butter(M,pee);
+%[B,acoe]=cheby1(N,0.5,pee);
+%[B,bcoe]=cheby1(M,0.5,pee);
+[B,acoe]=cheby2(N,20,pee);
+[B,bcoe]=cheby2(M,21,pee);
+
+D=[exp(-ii*tau*(0:se-2)*dw) zeros(1,P/2-se+2)];
+Mag=[(0:pe-1)/(pe-1) zeros(1,P/2+1-pe)];
+D=Mag.*D;
+E2=10;
+while 1
+A=fft(acoe,P);
+A1=exp(-ii*N*dw*(0:P-1)).*conj(A)./A;
+A1=A1(hani);
+A2=2*ii*exp(-ii*N*dw*(0:P-1))./A./A;
+A2=A2(hani);
+A=A(hani);
+B=fft(bcoe,P);
+B1=exp(-ii*M*dw*(0:P-1)).*conj(B)./B;
+B1=B1(hani);
+B2=2*ii*exp(-ii*M*dw*(0:P-1))./B./B;
+B2=B2(hani);
+B=B(hani);
+DD=(2*D(hani)-A1+B1).*Ws;
+E=DD*DD';
+E=E/length(hani)
+%plot(abs(A1+B1)/2)
+%pause(0.5)
+phi=ones(N,1)*(A2.*abs(A).*Ws).*sin((1:N)'*(hani-1)*dw+ones(N,1)*angle(A));
+psi=-ones(M,1)*(B2.*abs(B).*Ws).*sin((1:M)'*(hani-1)*dw+ones(M,1)*angle(B));
+
+RR=real(phi*phi');
+SS=real(psi*psi');
+RS=real(phi*psi');
+SR=real(psi*phi');
+
+PP=sum(real(ones(N,1)*(DD.*Ws.*Ws).*conj(phi))');
+QQ=sum(real(ones(M,1)*(DD.*Ws.*Ws).*conj(psi))');
+
+T=[RR RS;SR SS];
+b=[PP QQ]; 
+               
+x=b/T;
+
+t=L_Serach2(E,[acoe(2:N+1) bcoe(2:M+1)],x,N,M,hani,P,D,10,10,Ws);
+
+%pause
+while 1
+ok=0;
+acoe2=acoe+t*[0 x(1:N)];
+bcoe2=bcoe+t*[0 x(N+1:N+M)];
+
+ca=[abs(roots(acoe2));abs(roots(bcoe2))];
+
+for i=1:N+M
+	if abs(ca(i)) >= 1
+		ok=1;
+%		t=t/2;
+		break
+	end
+end
+if ok==0
+break
+else disp('unstable')
+break
+end
+ 
+end
+pcon=[pcon E];
+if t<0.0001 | abs(E-E2)/E<0.001
+%if t<0.0001 | E<1.5536e-04
+break
+end
+E2=E;
+acoe=acoe+t*[0 x(1:N)];
+bcoe=bcoe+t*[0 x(N+1:N+M)];
+end
+%A=fft(acoe,P);
+%A1=exp(-ii*N*dw*(0:P-1)).*conj(A)./A;
+%B=fft(bcoe,P);
+%B1=exp(-ii*M*dw*(0:P-1)).*conj(B)./B;
+%plot(abs(A1+B1)/2)
+[h1,w]=freqz(fliplr(acoe),acoe,P);
+[h2,w]=freqz(fliplr(bcoe),bcoe,P);
+hl=h1+h2;
+hh=h1-h2;
+%plot(w,abs(hl)/2,w,abs(hh)/2,[w(pe*2) w(pe*2)],[0 1])
+%plot(real(a),imag(a),'*',real(b),imag(b),'*')
+while 0
+plot(w,20*log10(abs(hl)/2),[w(pe*2) w(pe*2)],[-100 0])
+D=[exp(-ii*tau*(0:(se-2)*2)*dw/2) zeros(1,(P/2-se+1)*2)];
+%plot(w,unwrap(angle(hl(1:2*pe))),[w(pe*2) w(pe*2)],[-4 4])
+plot(w(1:pe*2),angle(hl(1:2*pe))-angle(D(1:2*pe))',[w(pe*2) w(pe*2)],[-0.1 0.1])
+plot(w,unwrap(angle(hl))/2,w,unwrap(angle(hh))/2)
+plot(w,unwrap(angle(h1)),w,unwrap(angle(h2)))
+ncoe=conv(fliplr(acoe),bcoe)+conv(fliplr(bcoe),acoe);
+dcoe=conv(acoe,bcoe);
+gd=grpdelay(ncoe,dcoe,P);
+plot(gd)
+end
+t2=clock;
+ddd=etime(t2,t1)

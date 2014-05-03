@@ -1,0 +1,40 @@
+<TITLE>/</TITLE>
+<BODY>
+<A HREF = "index.html">[Index for .]</A>
+<A HREF = "../index.html">[Return to Master Index]</A>
+<H1>apfar2</H1>
+<H2>(./apfar2.m)</H2>
+<HR><H3>Function Synopsis</H3>
+<pre>[phasdel,apvec] = apfar2(N,Np,wp)
+</pre>
+<HR><H3>Help text</H3>
+<pre>
+ APFAR2
+ MATLAB m-file for approximation of fractional delay
+ MAIN PROGRAM FOR CONTINUOUS DELAY CONTROL OF ALLPASS FILTERS
+ using Farrow structure with polynomial approximation.
+ This version: LS phase delay approximation (can be changed)
+ Format: [phasdel,apvec] = apfar2(N,Np,wp)
+ Input: N = filter order
+        Np = order of polynomial
+        wp = passband edge of approximation (0 &lt; wp &lt; 1)
+        (edit other parameters in program)
+ Output: phasedel = phase delay vector
+         apvec = filter coefficient vector
+ Subroutines: standard MATLAB functions
+
+ NOTE! If you change the parameters below, check
+ that they are consistent with those of <A HREF = "../1../fdap2.html">fdap2</A>.m
+
+ Timo Laakso   14.03.1993
+ Last revision 16.01.1996 Timo Laakso
+</pre>
+<HR><H3>Cross-Reference Information</H3>This function calls
+<pre><UL>
+<LI><A HREF = "../1../aplspd2.html">aplspd2</A>        ./aplspd2.m</LI>
+</UL></pre>
+<HR>
+Produced by <A HREF="http://www.nd.edu/Courses/kantor/matlab/mat2html">mat2html</A> on Tue Aug 12 13:10:21 US/Pacific 1997
+<BR>
+Cross-Directory links are: OFF<BR>
+</BODY>
